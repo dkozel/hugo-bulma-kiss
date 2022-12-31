@@ -1,25 +1,30 @@
-This project is no longer being maintained. Check https://github.com/solutionroute/ for any newer Hugo themes.
+# hugo-bulma-kiss
 
-# hugo-smorg 
+This theme is forked from [Mike Watkins'](https://mikewatkins.ca) 
+[Smorg](https://github.com/solutionroute/hugo-smorg) which is no longer
+maintained.
 
-* Demo site: https://solutionroute.github.io/demo/hugo-smorg/
-* Author's Site: [https://mikewatkins.ca/](https://mikewatkins.ca/)
+Bulma KISS is intended to be a clean and minimal theme using the 
+[Bulma](https://bulma.io/) CSS framework to provide a simple personal website
+for Derek Kozel's site. The original values from Smorg of being responsive and
+mobile-friendly remain, as does the intent of allowing simple and flexible 
+adaptation of the theme.
 
-Hugo-smorg (small-org? smorgasbord?) is a responsive mobile-first
-[Bulma][]-powered, reasonably minimalistic [Hugo][] (https://gohugo.io/) theme
-for an individual blogger or a small organization to adapt as need be.
+The theme is not specifically intended for general use, but small fixes and 
+improvements are welcome if anyone does use it. Just like Bulma, this theme 
+intends to "just work" rather than being clever or ideal.
 
-**Current release**: v0.7, April 4 2018 - see [CHANGELOG](./CHANGELOG.md); this
-project is being updated daily at present - following HEAD is best. If you are
-using the theme and spot issues or areas for improvement please let me know by
-opening an issue or submitting a PR.
+Keep It Simple and Stupid
 
-An ongoing work in progress, I'm using Hugo-Smorg as a base for other projects. 
+**Current release**: v1.0, December 31, 2022 - Officially breaking from Smorg 
+in order to do a variety of updates and to remove missing dependencies.
+
+Check the CHANGELOG.md for details about the changes made.
 
 ## Objectives
 
 * Remain easy to understand while also being easy to extend.
-* Keep pace with current [Hugo][] features and practicies.
+* Keep pace with current [Hugo](https://gohugo.io) features and practicies.
 * Avoid relying on config.yaml for too much customization.
 * Keep HTML customizability effort low using template blocks and partials and
   CSS customizability options open via SASS / CSS.
@@ -27,11 +32,11 @@ An ongoing work in progress, I'm using Hugo-Smorg as a base for other projects.
 
 ## Features
 
-Hugo-smorg is:
+Bulma KISS is:
 
-* Mobile first thanks to [Bulma][], a SASS CSS framework alternative to
+* Mobile first thanks to [Bulma](https://bulma.io/), a SASS CSS framework alternative to
   Bootstrap.
-* Themable itself via [Bulmaswatch][].
+* Themable itself via [Bulmaswatch](https://jenil.github.io/bulmaswatch/).
 * Minimalistic in nature. 
 
 And offers:
@@ -43,40 +48,18 @@ And offers:
 * JSON-LD microdata
 * Category and Tag taxonomies (partial page-meta)
 * Themed mobile-friendly pagination.
-* Includes syntax highlighting with a choice of colour themes.
-* By default uses zero-wait modern system font stacks; easy integration with
-  a webfont via a couple lines of SASS and `npm run scss:min`.
-
-## Screenshot
-
-<img src="https://raw.githubusercontent.com/solutionroute/hugo-smorg/master/images/tn.png" width="900" height="600" style="border: 1px solid grey">
-
-See the [demo site][] for a live view.
 
 ## Installation
 
 1. Clone the repo:
 
-	git clone --recursive https://github.com/solutionroute/hugo-smorg.git
+	git clone --recursive https://github.com/dkozel/hugo-bulma-kiss.git
 
 2. To view the theme:
 
 	cd exampleSite
 	hugo server
 
-3. (Optionally) install development dependencies:
-
-To adapt the provided SASS produced CSS you'll need to install SASS and Bulma
-at the very least; the least painful way to go about this is via Nodejs and
-npm; Once those tools are installed, in the hugo-smorg theme directory:
-
-	npm install
-
-This will install the dependencies listed in _package.json_ including Bulma and
-node-sass. You'll also find some handy run scripts including `npm run dev`
-which will build your site and SCSS/CSS files and reload automatically.
-
 [Hugo]: https://gohugo.io/
-[demo site]: https://solutionroute.github.io/demo/hugo-smorg/
 [Bulma]: https://bulma.io/ 
 [Bulmaswatch]: https://jenil.github.io/bulmaswatch/

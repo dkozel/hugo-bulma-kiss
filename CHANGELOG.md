@@ -1,16 +1,16 @@
-# Hugo-smorg Changelog & TODO List
+# Hugo Bulma KISS
 
-## TODO / Coming Soon
+## v1.0
 
-Now that the block template / partials improvements are (largely) complete, new
-features to come:
+* Removed chroma-sass-themes as the upstream repo had been deleted
+* Removed system-font-css to simplify dependencies
+* Updated Bulma to v0.9.4 and use a git submodule
+* Switched Bulmaswatch dependency to the main upstream repo by Jenil Gogari
+* Updated Bulmaswatch to the latest HEAD ()
+* Use Hugo's asset Pipe tooling to convert the Bulma, Bulmaswatch, and theme
+  Sass files to CSS, removing the need for external tooling
 
-* Add Social Media microdata (Twitter, etc.)
-* Landing page (with and without catchy images) examples
-* A text-centric minimalist layout customization and companion CSS swatch
-* Per-page image and other resources
-
-## HEAD
+## Below this point is the Changelog of the original Hugo Smorg theme
 
 * Added partials/home/only-content.html, provides the simplest possible landing
   page with content only from the relevant `_index.md`. See layouts/index.html

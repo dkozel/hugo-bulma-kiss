@@ -1,14 +1,14 @@
-name = "hugo-smorg"
+name = "bulma-kiss"
 license = "MIT"
-licenselink = "https://github.com/solutionroute/hugo-smorg/blob/master/LICENSE"
+licenselink = "https://github.com/dkozel/hugo-bulma-kiss/blob/master/LICENSE"
 description = "Responsive mobile-first Bulma-powered minimalistic Hugo theme for an individual or small organization or as a starter for grander ideas."
-homepage = "https://solutionroute.github.io/hugo-smorg/"
+homepage = "https://github.com/dkozel/hugo-bulma-kiss"
 tags = ["blog","mobile","bulma","responsive", "minimal"]
 features = ["responsive","atom","bulma","bulmaswatch"]
-min_version = "0.32"
-updated = "2018-03-15"
+min_version = "1.0"
+updated = "2022-12-31"
 
 [author]
-  name = "Mike Watkins"
-  homepage = "https://github.com/solutionroute"
+  name = "Derek Kozel"
+  homepage = "https://github.com/dkozel"
 
