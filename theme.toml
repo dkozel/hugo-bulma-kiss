@@ -5,7 +5,7 @@ description = "Responsive mobile-first Bulma-powered minimalistic Hugo theme for
 homepage = "https://github.com/dkozel/hugo-bulma-kiss"
 tags = ["blog","mobile","bulma","responsive", "minimal"]
 features = ["responsive","atom","bulma","bulmaswatch"]
-min_version = "1.0"
+min_version = "0.109.0"
 updated = "2022-12-31"
 
 [author]
