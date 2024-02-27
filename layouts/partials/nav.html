@@ -2,6 +2,9 @@
 	<nav class="navbar" aria-label="main navigation">
 		<div class="container">
 			<div class="navbar-brand">
+				<a href="{{ $.Site.BaseURL }}">
+					<figure class="image is-64x64"><img src="/logo.svg"/></figure>
+				</a>
 				<a class="navbar-item has-text-white-ter" 
 				   href="{{ $.Site.BaseURL }}">{{- partial "logo.html" . -}}</a>
 				<div class="navbar-burger burger" data-target="navMenu">
