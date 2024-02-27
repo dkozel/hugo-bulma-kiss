@@ -7,7 +7,7 @@
 		"@id": "{{ .Permalink }}" 
 	},
 	"name": "{{ .Site.Title }}", 
-	{{ with .Site.Params.description }} "description": "{{ . }}",{{ end }}{{ with .Site.Author }}
+	{{ with .Site.Params.description }} "description": "{{ . }}",{{ end }}{{ with .Site.Params.Author }}
 	"author": { 
 		"@type": "Person", 
 		{{ with .name }} "name": "{{ . }}",{{ end }}
