@@ -1,3 +1,13 @@
+@use "../variables/colors" as *;
+@use "../variables/components" as *;
+@use "../variables/layout" as *;
+@use "bulma/sass/components/navbar" as navbar;
+@use "bulma/sass/utilities/derived-variables" as dv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/mixins" as mx;
+@use "sass:list";
+@use "sass:meta";
+
 ////////////////////////////////////////////////
 // Navigation Component Overrides
 // Navbar, tabs, pagination, panels, hero
@@ -6,6 +16,19 @@
 // Navbar
 .navbar {
   border-radius: $radius;
+  background-color: $navbar-background-color;
+
+  .navbar-item,
+  .navbar-link {
+    color: $white-ter;
+    background-color: transparent;
+
+    &:hover,
+    &.is-active {
+      color: $link;
+      background-color: transparent;
+    }
+  }
 
   .navbar-menu {
     box-shadow: none;
@@ -13,12 +36,21 @@
 
   .navbar-dropdown {
     box-shadow: none;
+    background-color: $navbar-dropdown-background-color;
+
     .navbar-item {
       color: $button-color;
+      background-color: transparent;
+
+      &:hover,
+      &.is-active {
+        color: $link;
+        background-color: transparent;
+      }
     }
   }
 
-  @include until($navbar-breakpoint) {
+  @include mx.until(navbar.$navbar-breakpoint) {
     color: $navbar-item-color;
     .navbar-menu {
       background-color: $navbar-dropdown-background-color;
@@ -86,7 +118,7 @@ body > .navbar {
 }
 
 .panel-heading {
-  font-weight: $weight-bold;
+  font-weight: iv.$weight-bold;
 }
 
 .panel-tabs {
@@ -144,9 +176,16 @@ body > .navbar {
     }
   }
 
-  @each $name, $pair in $colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
+  @each $name, $pair in dv.$colors {
+    $color: null;
+    $color-invert: null;
+    @if meta.type-of($pair) == "list" and list.length($pair) >= 2 {
+      $color: list.nth($pair, 1);
+      $color-invert: list.nth($pair, 2);
+    } @else {
+      $color: $pair;
+      $color-invert: $pair;
+    }
 
     &.is-#{$name} {
       .navbar {
@@ -159,7 +198,7 @@ body > .navbar {
           }
         }
 
-          @include from($navbar-breakpoint) {
+          @include mx.from(navbar.$navbar-breakpoint) {
           .navbar-dropdown {
             .navbar-item:not(.is-active):not(:hover) {
               color: $button-color;

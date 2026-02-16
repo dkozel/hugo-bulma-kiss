@@ -1,18 +1,12 @@
 /*! Hugo Bulma KISS theme | github.com/dkozel/hugo-bulma-kiss */
-// See README.md for build instructions.
+// Bulma v1 uses Dart Sass and @use/@forward. Keep configuration here to drive the
+// generated CSS variables and palettes, then layer theme overrides.
 
-// Variable definition and import order is important.
-// 1. Import theme variables (colors, typography, layout, components)
-// 2. Override with site-specific variables
-// 3. Import Bulma itself
-// 4. Import theme style overrides
-// 5. Finish off with any site-specific customizations
-
-// 1. Import theme variables
-@import "theme/variables/colors";
-@import "theme/variables/typography";
-@import "theme/variables/layout";
-@import "theme/variables/components";
+// 1. Import theme variable defaults (colors, typography, layout, components)
+@use "theme/variables/colors" as *;
+@use "theme/variables/typography" as *;
+@use "theme/variables/layout" as *;
+@use "theme/variables/components" as *;
 
 // 2. Site-specific variable overrides
 $body-size: 16px;
@@ -20,15 +14,56 @@ $link: hsl(217, 71%, 53%);
 $family-sans-serif: "Open Sans", sans-serif;
 $family-primary: $family-sans-serif;
 $family-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$text-weak: $text-light;
 
-// 3. Import Bulma
-@import "bulma/bulma";
+// 3. Configure Bulma v1 (exports CSS variables + themes)
+@use "bulma/sass" as bulma with (
+  // Base palette
+  $grey: $grey,
+  $grey-light: $grey-light,
+  $grey-lighter: $grey-lighter,
+  $orange: $orange,
+  $yellow: $yellow,
+  $green: $green,
+  $turquoise: $turquoise,
+  $blue: $blue,
+  $purple: $purple,
+  $red: $red,
+  $white-ter: $white-ter,
 
-// 4. Import theme overrides
-@import "theme/overrides/base";
-@import "theme/overrides/forms";
-@import "theme/overrides/components";
-@import "theme/overrides/navigation";
+  // Brand / text
+  $primary: $primary,
+  $link: $link,
+  $text: $text,
+  $text-strong: $text-strong,
+  $text-weak: $text-weak,
+
+  // Typography
+  $family-sans-serif: $family-sans-serif,
+  $family-primary: $family-primary,
+  $family-monospace: $family-monospace,
+  $body-size: $body-size,
+  $size-7: $size-7,
+  $subtitle-color: $subtitle-color,
+
+  // Layout + components
+  $radius-small: $radius-small,
+  $radius: $radius,
+  $radius-large: $radius-large,
+  $control-height: $control-height,
+  $navbar-height: $navbar-height,
+  $navbar-dropdown-arrow: $navbar-dropdown-arrow,
+  $navbar-dropdown-background-color: $navbar-dropdown-background-color,
+  $box-color: $box-color,
+  $box-background-color: $box-background-color,
+  $footer-background-color: $footer-background-color
+);
+
+// 4. Theme overrides
+@use "theme/overrides/base";
+@use "theme/overrides/forms";
+@use "theme/overrides/components";
+@use "theme/overrides/navigation";
 
 // 5. Site-specific customizations
 
@@ -36,12 +71,12 @@ $family-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, 
 
 // Make footer background on short pages seem infinite
 html {
-	background-color: $white-ter !important;
+  background-color: $white-ter !important;
 }
 
 body > section {
-	background-color: $white !important;
-	&.section.hero {
-		padding: 0px !important;
-	}
+  background-color: $white !important;
+  &.section.hero {
+    padding: 0px !important;
+  }
 }

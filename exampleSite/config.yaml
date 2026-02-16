@@ -15,7 +15,7 @@ themesDir: "../.."
 #
 # Every site needs these few: theme, baseURL, languageCode and title
 # Name of the theme your Hugo site uses; leave this in place:
-theme: "hugo-smorg"
+theme: "bulma-kiss"
 baseURL: "http://www.example.com/"
 languageCode: "en-us"
 title: "Hugo-Smorg Theme"
@@ -45,7 +45,13 @@ metaDataFormat: yaml
 summaryLength: 20
 
 # paginate sets the maximum number of items (pages) in a page listing.
-paginate: 2  # set very low for demo purposes only, 5 - 10 or more would be reasonable 
+pagination:
+  pagerSize: 2  # set very low for demo purposes only, 5 - 10 or more would be reasonable
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 # GoogleAnalytics offers deep insight into how visitors use your site. It's
 # optional, and free: https://www.google.com/analytics/analytics/

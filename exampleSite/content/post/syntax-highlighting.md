@@ -1,7 +1,6 @@
 ---
 title: "Syntax Highlighting"
-description: "Code examples to demonstrate syntax highlighting with 
-			  the current theme."
+description: "Code examples to demonstrate syntax highlighting with the current theme."
 date: 2018-03-10T17:23:09-08:00
 draft: false
 author: Mike Watkins 

@@ -1,3 +1,5 @@
+@use "sass:color" as c;
+
 ////////////////////////////////////////////////
 // Color Palette
 // Flatly theme color scheme
@@ -14,7 +16,9 @@ $turquoise: #1abc9c;
 $blue: #3498db;
 $purple: #8e44ad;
 $red: #e74c3c;
+$white: #ffffff;
 $white-ter: #ecf0f1;
+$white-bis: c.adjust($white-ter, $lightness: 2%);
 
 // Primary color
 $primary: #34495e !default;
@@ -24,8 +28,8 @@ $yellow-invert: #fff;
 
 // Text colors
 $text: $primary;
-$text-light: lighten($primary, 10);
-$text-strong: darken($primary, 5);
+$text-light: c.adjust($primary, $lightness: 10%);
+$text-strong: c.adjust($primary, $lightness: -5%);
 
 // Box colors
 $box-color: $text;
@@ -34,15 +38,16 @@ $box-shadow: none;
 
 // Link colors
 $link: $turquoise;
-$link-hover: darken($link, 10);
-$link-focus: darken($link, 10);
-$link-active: darken($link, 10);
+$link-hover: c.adjust($link, $lightness: -10%);
+$link-focus: c.adjust($link, $lightness: -10%);
+$link-active: c.adjust($link, $lightness: -10%);
 
 // Button colors
 $button-color: $primary;
-$button-hover-color: darken($primary, 5); // primary-dark
-$button-focus: darken($primary, 5); // primary-dark
-$button-active-color: darken($primary, 5); // primary-dark
+$button-hover-color: c.adjust($primary, $lightness: -5%); // primary-dark
+$button-focus: c.adjust($primary, $lightness: -5%); // primary-dark
+$button-active-color: c.adjust($primary, $lightness: -5%); // primary-dark
 
 // Footer
 $footer-background-color: $white-ter;
+@use "sass:color";

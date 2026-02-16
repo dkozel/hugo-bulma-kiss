@@ -21,14 +21,12 @@
 	<updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
 	{{- end }}
 	<id>{{ .Permalink }}</id>
-	{{- with .Site.Author.name }}
+	{{- with .Site.Params.Author }}
 	<author>
-		<name>{{.}}</name>
-		{{- with $.Site.Author.email }}
-		<email>{{.}}</email>
-		{{- end }}
+		{{- with .name }}<name>{{ . }}</name>{{ end }}
+		{{- with .email }}<email>{{ . }}</email>{{ end }}
 	</author>
-{{- end }}
+	{{- end }}
   {{- range .Data.Pages }}
   <entry>
 	<title>{{ .Title | plainify}}</title>

@@ -6,15 +6,15 @@
 		"@type": "WebPage", 
 		"@id": "{{ .Permalink }}" 
 	},
-	"name": "{{ .Site.Title }}", 
-	{{ with .Site.Params.description }} "description": "{{ . }}",{{ end }}{{ with .Site.Params.Author }}
+	"name": "{{ .Site.Title }}"{{ with .Site.Params.description }}, 
+	"description": "{{ . }}"{{ end }}{{ with .Site.Params.Author }},
 	"author": { 
 		"@type": "Person", 
 		{{ with .name }} "name": "{{ . }}",{{ end }}
 		{{ with .email }}"email": "{{ . }}"{{ end }}
 	}{{ end }}
-	{{- with .Site.Params.publisher }},
-	"publisher": {
+	{{- with .Site.Params.publisher }}
+	,"publisher": {
 		{{ with .name }} "name": "{{ . }}",{{ end }}
 		{{ with .type }} "type": "{{ . }}"{{ end }}
 		{{ if eq .type "Organization" }}{{ with .logo }},

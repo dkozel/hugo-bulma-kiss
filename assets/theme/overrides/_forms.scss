@@ -1,3 +1,7 @@
+@use "bulma/sass/elements/button" as button;
+@use "bulma/sass/utilities/derived-variables" as dv;
+@use "../variables/layout" as *;
+
 ////////////////////////////////////////////////
 // Form Component Overrides
 // Buttons, inputs, selects, and controls
@@ -12,21 +16,7 @@
   &.is-focused,
   &:active,
   &:focus {
-    box-shadow: 0 0 0 2px rgba($button-focus-border-color, 0.25);
-  }
-  @each $name, $pair in $colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
-
-    &.is-#{$name} {
-      &.is-active,
-      &.is-focused,
-      &:active,
-      &:focus {
-        border-color: $color;
-        box-shadow: 0 0 0 2px rgba($color, 0.25);
-      }
-    }
+    box-shadow: 0 0 0 2px rgba(button.$button-focus-border-color, 0.25);
   }
 }
 

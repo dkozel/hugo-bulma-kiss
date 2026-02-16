@@ -18,7 +18,12 @@
 	      href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}">{{ end }}
 	{{- end }}
 
-	{{ $style := resources.GetMatch "bulma-kiss.scss" | css.Sass (dict "outputStyle" "compressed") | fingerprint }}
+	{{ $sassOpts := dict
+		"outputStyle" "compressed"
+		"transpiler" "dartsass"
+		"includePaths" (slice "assets")
+	}}
+	{{ $style := resources.GetMatch "bulma-kiss.scss" | css.Sass $sassOpts | fingerprint }}
 	<link rel="preload" href="{{ $style.Permalink }}" as="style">
 	<link rel="stylesheet" href="{{ $style.Permalink }}">
 
@@ -27,5 +32,5 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-	{{ .Hugo.Generator -}}
+	{{ hugo.Generator -}}
 	{{- partial "favicon.html" . -}}

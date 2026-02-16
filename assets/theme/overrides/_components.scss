@@ -1,3 +1,10 @@
+@use "../variables/colors" as *;
+@use "../variables/layout" as *;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/derived-variables" as dv;
+@use "sass:list";
+@use "sass:meta";
+
 ////////////////////////////////////////////////
 // UI Component Overrides
 // Cards, tags, notifications, messages, menu
@@ -32,15 +39,19 @@
   }
 }
 
-// Notification
-.notification {
-  @each $name, $pair in $colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
+  // Notification
+  .notification {
+  @each $name, $pair in dv.$colors {
+    $color: null;
+    @if meta.type-of($pair) == "list" and list.length($pair) >= 2 {
+      $color: list.nth($pair, 1);
+      } @else {
+        $color: $pair;
+      }
 
     &.is-#{$name} {
       a:not(.button) {
-        color: $color-invert;
+        color: $color;
         text-decoration: underline;
       }
     }
@@ -59,7 +70,7 @@
 
 // Message
 .message-header {
-  font-weight: $weight-bold;
+  font-weight: iv.$weight-bold;
 }
 
 .message-body {
