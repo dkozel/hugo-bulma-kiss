@@ -22,8 +22,7 @@ $family-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, 
 @import "bulmaswatch/flatly/overrides";
 // 5
 
-// Optional!
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i);
+// Font loaded via <link> in head.html for better performance (font-display: swap)
 
 // make footer background on short pages seem infinite
 html {
