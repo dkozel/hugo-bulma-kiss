@@ -15,14 +15,14 @@
 {{- range $index, $section := .Site.Sections }}
 	{{- if eq $section $currentNode.CurrentSection }}
 
-		<li {{ if eq $section.URL $currentNode.URL }}class="is-active"{{ end }}>
-			<a href="{{ $section.URL }}"{{ if eq $section.URL $currentNode.URL }} 
+		<li {{ if eq $section.RelPermalink $currentNode.RelPermalink }}class="is-active"{{ end }}>
+			<a href="{{ $section.RelPermalink }}"{{ if eq $section.RelPermalink $currentNode.RelPermalink }}
 				aria-current="page"{{end}}>{{ $section.Slug | default $section.Name | title}}</a>
 		</li>
 
 		{{- range $i, $page := $section.Pages }}
-			<li {{ if eq $page.URL $currentNode.URL }}class="is-active"{{ end }}>
-				<a href="{{ $page.URL }}"{{ if eq $page.URL $currentNode.URL }} 
+			<li {{ if eq $page.RelPermalink $currentNode.RelPermalink }}class="is-active"{{ end }}>
+				<a href="{{ $page.RelPermalink }}"{{ if eq $page.RelPermalink $currentNode.RelPermalink }}
 					aria-current="page"{{end}}>{{ $page.Slug | default $page.Name | title }}</a>
 			</li>
 		{{- end }}
