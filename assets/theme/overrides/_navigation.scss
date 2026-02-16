@@ -1,0 +1,172 @@
+////////////////////////////////////////////////
+// Navigation Component Overrides
+// Navbar, tabs, pagination, panels, hero
+////////////////////////////////////////////////
+
+// Navbar
+.navbar {
+  border-radius: $radius;
+
+  .navbar-menu {
+    box-shadow: none;
+  }
+
+  .navbar-dropdown {
+    box-shadow: none;
+    .navbar-item {
+      color: $button-color;
+    }
+  }
+
+  @include until($navbar-breakpoint) {
+    color: $navbar-item-color;
+    .navbar-menu {
+      background-color: $navbar-dropdown-background-color;
+      border-radius: 0 0 $radius $radius;
+    }
+
+    .navbar-item,
+    .navbar-link {
+      &:not(.is-active):not(:hover) {
+        color: $button-color;
+      }
+    }
+  }
+
+  &.is-transparent {
+    background-color: transparent;
+    color: $text;
+
+    .navbar-item,
+    .navbar-link {
+      color: $button-color;
+
+      &:hover {
+        color: $link;
+        background-color: transparent;
+      }
+
+      &.is-active {
+        color: $link;
+        background-color: transparent;
+      }
+    }
+
+    .navbar-link:after {
+      border-color: $button-color;
+    }
+
+    .navbar-burger:hover {
+      background-color: $white-ter;
+    }
+  }
+}
+
+.hero .navbar,
+body > .navbar {
+  border-radius: 0;
+}
+
+// Pagination
+.pagination-link,
+.pagination-next,
+.pagination-previous {
+  border-width: $border-width;
+}
+
+// Panel
+.panel-block,
+.panel-heading,
+.panel-tabs {
+  border-width: $border-width;
+
+  &:first-child {
+    border-top-width: $border-width;
+  }
+}
+
+.panel-heading {
+  font-weight: $weight-bold;
+}
+
+.panel-tabs {
+  a {
+    border-width: $border-width;
+    margin-bottom: -$border-width;
+  }
+}
+
+.panel-block {
+  &:hover {
+    color: $button-hover-color;
+
+    .panel-icon {
+      color: $button-hover-color;
+    }
+  }
+}
+
+// Tabs
+.tabs {
+  a {
+    border-bottom-width: $border-width;
+    margin-bottom: -$border-width;
+  }
+
+  ul {
+    border-bottom-width: $border-width;
+  }
+
+  &.is-boxed {
+    a {
+      border-width: $border-width;
+    }
+  }
+
+  &.is-toggle {
+    li a {
+      border-width: $border-width;
+      margin-bottom: 0;
+    }
+
+    li + li {
+      margin-left: -$border-width;
+    }
+  }
+}
+
+// Hero
+.hero {
+  .navbar {
+    background-color: $primary;
+    .navbar-menu {
+      border-radius: 0;
+    }
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      .navbar {
+        background-color: $color;
+
+        .navbar-item,
+        .navbar-link {
+          &:not(.is-active):not(:hover) {
+            color: $color-invert;
+          }
+        }
+
+          @include from($navbar-breakpoint) {
+          .navbar-dropdown {
+            .navbar-item:not(.is-active):not(:hover) {
+              color: $button-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

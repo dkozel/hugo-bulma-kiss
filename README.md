@@ -16,8 +16,8 @@ intends to "just work" rather than being clever or ideal.
 
 Keep It Simple and Stupid
 
-**Current release**: v1.0, December 31, 2022 - Officially breaking from Smorg 
-in order to do a variety of updates and to remove missing dependencies.
+**Current release**: v2.0, December 17, 2025 
+Removed the dependency on Bulmaswatch as it became unmaintained.
 
 Check the CHANGELOG.md for details about the changes made.
 
@@ -36,7 +36,7 @@ Bulma KISS is:
 
 * Mobile first thanks to [Bulma](https://bulma.io/), a SASS CSS framework alternative to
   Bootstrap.
-* Themable itself via [Bulmaswatch](https://jenil.github.io/bulmaswatch/).
+* Themed with a clean, modern Flatly-inspired color scheme.
 * Minimalistic in nature. 
 
 And offers:
@@ -61,5 +61,4 @@ And offers:
 	hugo server
 
 [Hugo]: https://gohugo.io/
-[Bulma]: https://bulma.io/ 
-[Bulmaswatch]: https://jenil.github.io/bulmaswatch/
+[Bulma]: https://bulma.io/

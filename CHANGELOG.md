@@ -1,5 +1,15 @@
 # Hugo Bulma KISS
 
+## v2.0 (Dec 2025)
+
+* Removed Bulmaswatch dependency - theme now uses vanilla Bulma with custom theming
+* Refactored theme organization into clean, maintainable structure:
+  - Separated variables (colors, typography, layout, components) from overrides
+  - Organized overrides by category (base, forms, components, navigation)
+  - All theme styling now contained in `assets/theme/` directory
+* Maintained Flatly theme color scheme and styling
+* Improved theme customization capabilities and maintainability
+
 ## v1.0
 
 * Removed chroma-sass-themes as the upstream repo had been deleted

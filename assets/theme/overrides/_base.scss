@@ -1,0 +1,25 @@
+////////////////////////////////////////////////
+// Base Element Overrides
+// Styling for basic HTML elements
+////////////////////////////////////////////////
+
+// Font import (can be disabled by setting $theme-import-font: false)
+@if $theme-import-font {
+  @import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic&display=swap");
+}
+
+// Horizontal rules
+hr {
+  height: $border-width;
+}
+
+// Heading styling
+h6 {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Link transitions
+a {
+  transition: all 200ms ease;
+}

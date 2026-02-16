@@ -21,7 +21,7 @@ Hugo-smorg is buzzword compliant and more:
 
 * Easy to understand.
 * Mobile first, thanks [Bulma][]!
-* Easy to apply a new colour "swatch" with [Bulmaswatch][].
+* Themed with a clean, modern Flatly-inspired color scheme.
 * Minimalistic in nature, easily made more, or less, complicated.
 * Produces Atom syndication format with option to disable RSS; [details
 here](https://github.com/comfusion/after-dark/issues/32#issuecomment-312515542).
@@ -33,5 +33,4 @@ here](https://github.com/comfusion/after-dark/issues/32#issuecomment-312515542).
 
 [Hugo]: https://gohugo.io/
 [Hugo-smorg]: https://github.com/solutionroute/hugo-smorg
-[Bulma]: https://bulma.io/ 
-[Bulmaswatch]: https://jenil.github.io/bulmaswatch/
+[Bulma]: https://bulma.io/
